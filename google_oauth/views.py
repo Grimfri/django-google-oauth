@@ -156,6 +156,6 @@ class AuthReturnView(LoginRequiredMixin, View):
         """
         return xsrfutil.validate_token(
                    settings.SECRET_KEY, 
-                   self.request.REQUEST['state'],
+                   str(self.request.REQUEST['state']),
                    self.request.user
                )
