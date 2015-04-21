@@ -76,6 +76,7 @@ class AuthCredentials(LoginRequiredMixin, View):
                 scope= settings.GCAL_SCOPE,
                 access_type = settings.GCAL_ACCESS_TYPE,
                 approval_prompt = 'force',
+                request_visible_actions = settings.GCAL_VISIBLE_ACTIONS
             )
             self._flow = flow
         return self._flow
